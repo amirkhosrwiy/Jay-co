@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:gym/switch_account_screen.dart';
 import 'package:qr_flutter/qr_flutter.dart';
 import 'package:mobile_scanner/mobile_scanner.dart';
 
@@ -149,9 +150,9 @@ class _Bottom_NavigationState extends State<Bottom_Navigation> {
       case 2:
         return Icons.settings;
       case 3:
-        return Icons.arrow_downward;
-      case 4:
         return Icons.verified_user;
+      case 4:
+        return Icons.ads_click;
       default:
         return Icons.home;
     }
@@ -166,9 +167,9 @@ class _Bottom_NavigationState extends State<Bottom_Navigation> {
       case 2:
         return "تنظیمات";
       case 3:
-        return "دانلود مشخصات";
-      case 4:
         return "درباره ما";
+      case 4:
+        return "پروفایل";
       default:
         return "Home";
     }
@@ -178,60 +179,78 @@ class _Bottom_NavigationState extends State<Bottom_Navigation> {
   Widget build(BuildContext context) {
     return Scaffold(
       backgroundColor: Color(0xff1C1F2E),
-      body: Center(
-        child: Column(
-          mainAxisAlignment: MainAxisAlignment.center,
-          children: [
-            Text(
-              "QR کد شما برای اسکن",
-              style: TextStyle(
-                color: Colors.white,
-                fontSize: 18,
-                fontWeight: FontWeight.bold,
-              ),
-            ),
-            const SizedBox(height: 20),
-            Container(
-              padding: const EdgeInsets.all(16),
-              decoration: BoxDecoration(
-                color: Colors.white,
-                borderRadius: BorderRadius.circular(20),
-              ),
-              child: QrImageView(
-                data: _qrData,
-                version: QrVersions.auto,
-                size: 200,
-                foregroundColor: Colors.black,
-              ),
-            ),
-            const SizedBox(height: 20),
-            Text(
-              "با اسکن این کد، دیگران می‌توانند به حساب شما دسترسی پیدا کنند.",
-              textAlign: TextAlign.center,
-              style: TextStyle(color: Colors.grey[400], fontSize: 14),
-            ),
-            const SizedBox(height: 24),
-            ElevatedButton.icon(
-              onPressed: _openScanner,
-              icon: Icon(Icons.camera_alt, color: Colors.black),
-              label: Text(
-                "اسکن QR یا بارکد",
-                style: TextStyle(color: Colors.black),
-              ),
-              style: ElevatedButton.styleFrom(
-                backgroundColor: Color(0xff7F8CAA),
-                shape: RoundedRectangleBorder(
-                  borderRadius: BorderRadius.circular(20),
+      // ✅ AppBar استاندارد — دقیقاً مثل صفحه OTP
+      appBar: AppBar(
+        leading: IconButton(
+          icon: Icon(Icons.arrow_back, color: Color(0xffEAEFEF)),
+          onPressed: () {
+            Navigator.push(
+              context,
+              MaterialPageRoute(builder: (context) => SwitchAccountScreen()),
+            );
+          },
+        ),
+        title: Text('QR کد من', style: TextStyle(color: Color(0xffEAEFEF))),
+        backgroundColor: Color(0xff333446),
+        foregroundColor: Color(0xffEAEFEF),
+        elevation: 0,
+      ),
+      body: SafeArea(
+        child: Center(
+          child: Column(
+            mainAxisAlignment: MainAxisAlignment.center,
+            children: [
+              Text(
+                "QR کد شما برای اسکن",
+                style: TextStyle(
+                  color: Colors.white,
+                  fontSize: 18,
+                  fontWeight: FontWeight.bold,
                 ),
               ),
-            ),
-            SizedBox(height: 40),
-            Text(
-              "این اپلیکیشن توسط امیر خسروی(کارشناسی کامپیوتر-دانشگاه آزاد اسلامی - واحد ورامبن) نوشته شده و تمامی حقوق محفوظ است",
-              textAlign: TextAlign.center,
-              style: TextStyle(color: Colors.grey[400], fontSize: 12),
-            ),
-          ],
+              const SizedBox(height: 20),
+              Container(
+                padding: const EdgeInsets.all(16),
+                decoration: BoxDecoration(
+                  color: Colors.white,
+                  borderRadius: BorderRadius.circular(20),
+                ),
+                child: QrImageView(
+                  data: _qrData,
+                  version: QrVersions.auto,
+                  size: 200,
+                  foregroundColor: Colors.black,
+                ),
+              ),
+              const SizedBox(height: 20),
+              Text(
+                "با اسکن این کد، دیگران می‌توانند به حساب شما دسترسی پیدا کنند.",
+                textAlign: TextAlign.center,
+                style: TextStyle(color: Colors.grey[400], fontSize: 14),
+              ),
+              const SizedBox(height: 24),
+              ElevatedButton.icon(
+                onPressed: _openScanner,
+                icon: Icon(Icons.camera_alt, color: Colors.black),
+                label: Text(
+                  "اسکن QR یا بارکد",
+                  style: TextStyle(color: Colors.black),
+                ),
+                style: ElevatedButton.styleFrom(
+                  backgroundColor: Color(0xff7F8CAA),
+                  shape: RoundedRectangleBorder(
+                    borderRadius: BorderRadius.circular(20),
+                  ),
+                ),
+              ),
+              SizedBox(height: 40),
+              Text(
+                "این اپلیکیشن توسط امیر خسروی(کارشناسی کامپیوتر-دانشگاه آزاد اسلامی - واحد ورامبن) نوشته شده و تمامی حقوق محفوظ است",
+                textAlign: TextAlign.center,
+                style: TextStyle(color: Colors.grey[400], fontSize: 12),
+              ),
+            ],
+          ),
         ),
       ),
       bottomNavigationBar: Padding(
