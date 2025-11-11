@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart'; // برای inputFormatters
 import 'package:flutter_svg/svg.dart';
-import 'package:gym/otp_verification_screen.dart';
+import 'package:jay/otp_verification_screen.dart';
 import 'package:lottie/lottie.dart'; // صفحه بعدی
 
 class PhoneInputScreen extends StatefulWidget {
@@ -20,8 +20,8 @@ class _PhoneInputScreenState extends State<PhoneInputScreen> {
       backgroundColor: Colors.white,
       appBar: AppBar(
         title: const Text('Enter Phone Number'),
-        backgroundColor: const Color(0xff333446),
-        foregroundColor: const Color(0xffEAEFEF),
+        backgroundColor: const Color(0xff1C1F2E),
+        foregroundColor: const Color(0xff08CB00),
       ),
       body: Stack(
         children: [
@@ -31,11 +31,7 @@ class _PhoneInputScreenState extends State<PhoneInputScreen> {
                 gradient: LinearGradient(
                   begin: Alignment.topCenter,
                   end: Alignment.bottomCenter,
-                  colors: [
-                    Color(0xffEAEFEF),
-                    Color(0xff7F8CAA),
-                    Color(0xff333446),
-                  ],
+                  colors: [Colors.white, Color(0xff08CB00), Color(0xff1C1F2E)],
                 ),
               ),
             ),
@@ -61,7 +57,7 @@ class _PhoneInputScreenState extends State<PhoneInputScreen> {
             right: 0,
             height: 300,
             child: Lottie.asset(
-              'assets/animations/QR Code Scanner.json', // ← فایل Lottie سبز
+              'assets/animations/athlete.json', // ← فایل Lottie سبز
               width: 100,
               height: 100,
             ),

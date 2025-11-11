@@ -51,7 +51,7 @@ class _ProfilePageState extends State<ProfilePage> {
                 // در واقعیت: از ImagePicker استفاده می‌شود
                 setState(() {
                   _profileImage =
-                      'assets/images/men-scan.png'; // ← جایگزین با عکس جدید
+                      'assets/images/profile_new.png'; // ← جایگزین با عکس جدید
                 });
               },
               style: ElevatedButton.styleFrom(

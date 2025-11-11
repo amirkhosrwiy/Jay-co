@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:jay/nav_behavior.dart';
 import 'package:lottie/lottie.dart';
-import 'package:gym/nav_behavior.dart'; // مسیر واقعی خود را بررسی کنید
 
 class OtpVerificationScreen extends StatefulWidget {
   final String phone;
@@ -54,8 +54,8 @@ class _OtpVerificationScreenState extends State<OtpVerificationScreen> {
           onPressed: () => Navigator.pop(context),
         ),
         title: const Text('Verify Code'),
-        backgroundColor: const Color(0xff333446),
-        foregroundColor: const Color(0xffEAEFEF),
+        backgroundColor: const Color(0xff1C1F2E),
+        foregroundColor: const Color(0xff08CB00),
       ),
       body: Stack(
         children: [
@@ -65,11 +65,7 @@ class _OtpVerificationScreenState extends State<OtpVerificationScreen> {
                 gradient: LinearGradient(
                   begin: Alignment.topCenter,
                   end: Alignment.bottomCenter,
-                  colors: [
-                    Color(0xffEAEFEF),
-                    Color(0xff7F8CAA),
-                    Color(0xff333446),
-                  ],
+                  colors: [Colors.white, Color(0xff08CB00), Color(0xff1C1F2E)],
                 ),
               ),
             ),
