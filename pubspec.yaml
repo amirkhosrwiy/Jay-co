@@ -39,7 +39,8 @@ dependencies:
   lottie: ^3.3.2
   flutter_svg: ^2.2.1
   image_picker: ^1.2.0
-
+  qr_flutter: ^4.1.0
+  
 dev_dependencies:
   flutter_test:
     sdk: flutter
@@ -78,9 +79,13 @@ flutter:
     - assets/icon/icon.png
     - assets/images/
     - assets/images/logo.png
+    - assets/images/men-scan.png
+    - assets/images/nfc-mobile.png
+    - assets/images/scan.png
+    - assets/images/qr-b.png
     - assets/images/pattern.png
-    - assets/images/model.png
-    - assets/images/me.png
+    - assets/images/pattern.png
+    - assets/images/logo.png
     - assets/flags/iran_flag.svg
     - assets/animations/
     - assets/animations/accept.json

@@ -1,6 +1,5 @@
 import 'dart:ui';
 import 'package:flutter/material.dart';
-import 'package:gym/nav_behavior.dart';
 import 'package:gym/phone_input_screen.dart';
 
 void main() {
@@ -23,7 +22,7 @@ class SwitchAccountScreen extends StatelessWidget {
                 Container(
                   decoration: BoxDecoration(
                     image: DecorationImage(
-                      image: AssetImage('assets/images/at8.png'),
+                      image: AssetImage('assets/images/logo.png'),
                       fit: BoxFit.fitWidth,
                     ),
                   ),
@@ -64,7 +63,7 @@ class SwitchAccountScreen extends StatelessWidget {
                                 shape: BoxShape.circle, // دایره‌ای کردن کانتینر
                                 image: DecorationImage(
                                   image: AssetImage(
-                                    'assets/images/at5.png',
+                                    'assets/images/pattern.png',
                                   ), // مسیر عکس شما
                                   fit: BoxFit
                                       .cover, // عکس را به صورت پوشش کامل نمایش بده
@@ -109,7 +108,7 @@ class SwitchAccountScreen extends StatelessWidget {
                                   Navigator.push(
                                     context,
                                     MaterialPageRoute(
-                                      builder: (context) => Bottom_Navigation(),
+                                      builder: (context) => PhoneInputScreen(),
                                     ),
                                   );
                                 },

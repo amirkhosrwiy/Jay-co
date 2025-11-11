@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:gym/phone_input_screen.dart';
 import 'dart:async';
+
+import 'package:gym/switch_account_screen.dart';
 
 void main() {
   runApp(const Application());
@@ -40,7 +41,7 @@ class _SplashScreenState extends State<SplashScreen> {
       _timer = Timer(const Duration(seconds: 5), () {
         if (mounted) {
           Navigator.of(context).pushReplacement(
-            MaterialPageRoute(builder: (context) => PhoneInputScreen()),
+            MaterialPageRoute(builder: (context) => SwitchAccountScreen()),
           );
         }
       });

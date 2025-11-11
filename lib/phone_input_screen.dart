@@ -57,7 +57,7 @@ class _PhoneInputScreenState extends State<PhoneInputScreen> {
             right: 0,
             height: 300,
             child: Lottie.asset(
-              'assets/animations/athlete.json', // ← فایل Lottie سبز
+              'assets/animations/QR Code Scanner.json', // ← فایل Lottie سبز
               width: 100,
               height: 100,
             ),
