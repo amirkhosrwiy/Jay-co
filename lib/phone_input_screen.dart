@@ -20,8 +20,8 @@ class _PhoneInputScreenState extends State<PhoneInputScreen> {
       backgroundColor: Colors.white,
       appBar: AppBar(
         title: const Text('Enter Phone Number'),
-        backgroundColor: const Color(0xff1C1F2E),
-        foregroundColor: const Color(0xff08CB00),
+        backgroundColor: const Color(0xff333446),
+        foregroundColor: const Color(0xffEAEFEF),
       ),
       body: Stack(
         children: [
@@ -31,7 +31,11 @@ class _PhoneInputScreenState extends State<PhoneInputScreen> {
                 gradient: LinearGradient(
                   begin: Alignment.topCenter,
                   end: Alignment.bottomCenter,
-                  colors: [Colors.white, Color(0xff08CB00), Color(0xff1C1F2E)],
+                  colors: [
+                    Color(0xffEAEFEF),
+                    Color(0xff7F8CAA),
+                    Color(0xff333446),
+                  ],
                 ),
               ),
             ),

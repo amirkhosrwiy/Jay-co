@@ -54,8 +54,8 @@ class _OtpVerificationScreenState extends State<OtpVerificationScreen> {
           onPressed: () => Navigator.pop(context),
         ),
         title: const Text('Verify Code'),
-        backgroundColor: const Color(0xff1C1F2E),
-        foregroundColor: const Color(0xff08CB00),
+        backgroundColor: const Color(0xff333446),
+        foregroundColor: const Color(0xffEAEFEF),
       ),
       body: Stack(
         children: [
@@ -65,7 +65,11 @@ class _OtpVerificationScreenState extends State<OtpVerificationScreen> {
                 gradient: LinearGradient(
                   begin: Alignment.topCenter,
                   end: Alignment.bottomCenter,
-                  colors: [Colors.white, Color(0xff08CB00), Color(0xff1C1F2E)],
+                  colors: [
+                    Color(0xffEAEFEF),
+                    Color(0xff7F8CAA),
+                    Color(0xff333446),
+                  ],
                 ),
               ),
             ),

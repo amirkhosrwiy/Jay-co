@@ -40,8 +40,8 @@ class SwitchAccountScreen extends StatelessWidget {
                             begin: Alignment.topLeft,
                             end: Alignment.bottomRight,
                             colors: [
-                              Color.fromRGBO(255, 255, 255, 0.5),
-                              Color.fromRGBO(0, 0, 0, 0.498),
+                              Color.fromRGBO(234, 234, 239, 0.5),
+                              Color.fromRGBO(51, 52, 70, 0.498),
                             ],
                           ),
                           borderRadius: BorderRadius.all(Radius.circular(15)),
@@ -55,7 +55,7 @@ class SwitchAccountScreen extends StatelessWidget {
                               decoration: BoxDecoration(
                                 boxShadow: [
                                   BoxShadow(
-                                    color: Color(0xff63A361),
+                                    color: Color(0xff7F8CAA),
                                     blurRadius: 10,
                                     offset: Offset(1, 6), // Shadow position
                                   ),
@@ -63,7 +63,7 @@ class SwitchAccountScreen extends StatelessWidget {
                                 shape: BoxShape.circle, // دایره‌ای کردن کانتینر
                                 image: DecorationImage(
                                   image: AssetImage(
-                                    'assets/images/pattern.png',
+                                    'assets/images/logo.png',
                                   ), // مسیر عکس شما
                                   fit: BoxFit
                                       .cover, // عکس را به صورت پوشش کامل نمایش بده
@@ -86,7 +86,7 @@ class SwitchAccountScreen extends StatelessWidget {
                               child: ElevatedButton(
                                 style: ElevatedButton.styleFrom(
                                   backgroundColor: const Color(
-                                    0xff63A361,
+                                    0xff7F8CAA,
                                   ), // سبز مغز پسته‌ای
                                   foregroundColor: Colors.white, // متن سفید
                                   padding: const EdgeInsets.symmetric(
