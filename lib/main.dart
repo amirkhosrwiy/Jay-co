@@ -77,11 +77,11 @@ class _SplashScreenState extends State<SplashScreen> {
                 children: [
                   Text(
                     'from',
-                    style: TextStyle(color: Color(0xff63A361), fontSize: 20),
+                    style: TextStyle(color: Color(0xffEAEFEF), fontSize: 20),
                   ),
                   Text(
                     'AmirKhousravi',
-                    style: TextStyle(color: Color(0xff63A361), fontSize: 20),
+                    style: TextStyle(color: Color(0xffEAEFEF), fontSize: 20),
                   ),
                 ],
               ),
