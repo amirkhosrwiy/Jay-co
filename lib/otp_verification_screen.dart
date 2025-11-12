@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:lottie/lottie.dart';
 import 'package:jay/nav_behavior.dart';
+//این صفحه برای ارسال شماره به کاربره
 
 class OtpVerificationScreen extends StatefulWidget {
   final String phone;

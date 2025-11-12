@@ -1,7 +1,13 @@
 import 'package:flutter/material.dart';
+import 'package:jay/about_us_screen.dart';
+import 'package:jay/profile_screen.dart';
+import 'package:jay/screens/scan_history_screen.dart';
+import 'package:jay/settings_screen.dart';
 import 'package:jay/switch_account_screen.dart';
 import 'package:qr_flutter/qr_flutter.dart';
 import 'package:mobile_scanner/mobile_scanner.dart';
+import 'package:shared_preferences/shared_preferences.dart';
+import 'dart:convert';
 
 class Bottom_Navigation extends StatefulWidget {
   const Bottom_Navigation({super.key});
@@ -46,6 +52,9 @@ class _Bottom_NavigationState extends State<Bottom_Navigation> {
                         if (code != null) {
                           Navigator.of(context).pop(); // بستن BottomSheet
 
+                          // ✅ خط جدید: ذخیره کد
+                          _saveScannedCode(code);
+
                           showDialog(
                             context: context,
                             builder: (ctx) => AlertDialog(
@@ -72,6 +81,35 @@ class _Bottom_NavigationState extends State<Bottom_Navigation> {
     );
   }
 
+  //متد برای خواندن اسکن ها و ذخیره اطلاعات هر اسکنی که ما انجام میدیم
+  Future<void> _saveScannedCode(String code) async {
+    final prefs = await SharedPreferences.getInstance();
+
+    // تاریخ دقیق فعلی
+    final DateTime now = DateTime.now();
+
+    // ساخت رکورد جدید
+    final Map<String, String> record = {
+      'code': code,
+      'timestamp': now.toIso8601String(), // ذخیره به فرمت استاندارد
+    };
+
+    // خواندن لیست قبلی (اگر وجود داشت)
+    final String? existingJson = prefs.getString('scan_history_json');
+    final List<Map<String, dynamic>> history = existingJson != null
+        ? (jsonDecode(existingJson) as List)
+              .map((e) => Map<String, dynamic>.from(e))
+              .toList()
+        : [];
+
+    // جلوگیری از تکرار (اختیاری — بسته به نیاز شما)
+    final bool alreadyExists = history.any((item) => item['code'] == code);
+    if (!alreadyExists) {
+      history.add(record);
+      await prefs.setString('scan_history_json', jsonEncode(history));
+    }
+  }
+
   Widget _buildFloatingBar() {
     return Container(
       decoration: BoxDecoration(
@@ -96,9 +134,43 @@ class _Bottom_NavigationState extends State<Bottom_Navigation> {
         children: List.generate(5, (index) {
           return GestureDetector(
             onTap: () {
+              // همیشه selectedIndex را به‌روز می‌کنیم (برای فیدبک بصری)
               setState(() {
                 _selectedFloatingIndex = index;
               });
+
+              // اگر روی QR کلیک شد، هیچ کاری نکن (همان صفحه باقی بماند)
+              if (index == 0) {
+                return;
+              }
+
+              // در غیر این صورت، به صفحه مربوطه برو
+              switch (index) {
+                case 1:
+                  Navigator.push(
+                    context,
+                    MaterialPageRoute(builder: (_) => ScanHistoryScreen()),
+                  );
+                  break;
+                case 2:
+                  Navigator.push(
+                    context,
+                    MaterialPageRoute(builder: (_) => SettingsScreen()),
+                  );
+                  break;
+                case 3:
+                  Navigator.push(
+                    context,
+                    MaterialPageRoute(builder: (_) => AboutUsScreen()),
+                  );
+                  break;
+                case 4:
+                  Navigator.push(
+                    context,
+                    MaterialPageRoute(builder: (_) => ProfileScreen()),
+                  );
+                  break;
+              }
             },
             child: Column(
               mainAxisSize: MainAxisSize.min,
