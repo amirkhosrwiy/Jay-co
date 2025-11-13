@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:jay/onboarding_splash.dart';
 import 'dart:async';
-import 'package:jay/switch_account_screen.dart';
+// import 'package:jay/switch_account_screen.dart';
 
 void main() {
   runApp(const Application());
@@ -40,7 +41,7 @@ class _SplashScreenState extends State<SplashScreen> {
       _timer = Timer(const Duration(seconds: 5), () {
         if (mounted) {
           Navigator.of(context).pushReplacement(
-            MaterialPageRoute(builder: (context) => SwitchAccountScreen()),
+            MaterialPageRoute(builder: (context) => OnboardingScreen()),
           );
         }
       });

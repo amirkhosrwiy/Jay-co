@@ -93,28 +93,93 @@ flutter:
     - assets/animations/accept.json
     - assets/animations/robot.json
 
-  # An image asset can refer to one or more resolution-specific "variants", see
-  # https://flutter.dev/to/resolution-aware-images
 
-  # For details regarding adding assets from package dependencies, see
-  # https://flutter.dev/to/asset-from-package
+  fonts:
+    - family: Atabay
+      fonts:
+        - asset: assets/fonts/Atabay.ttf
+        #///
+        #///
 
-  # To add custom fonts to your application, add a fonts section here,
-  # in this "flutter" section. Each entry in this list should have a
-  # "family" key with the font family name, and a "fonts" key with a
-  # list giving the asset and other descriptors for the font. For
-  # example:
-  # fonts:
-  #   - family: Schyler
-  #     fonts:
-  #       - asset: fonts/Schyler-Regular.ttf
-  #       - asset: fonts/Schyler-Italic.ttf
-  #         style: italic
-  #   - family: Trajan Pro
-  #     fonts:
-  #       - asset: fonts/TrajanPro.ttf
-  #       - asset: fonts/TrajanPro_Bold.ttf
-  #         weight: 700
+    - family: Bahman1
+      fonts:
+        - asset: assets/fonts/Bahman1.ttf
+        #///
+        #///
+    - family: Bahman2
+      fonts:
+        - asset: assets/fonts/Bahman2.ttf
+        #///
+        #///
+    - family: Bamdad
+      fonts:
+        - asset: assets/fonts/Bamdad.ttf
+        #///
+        #///
+    - family: Kaaf
+      fonts:
+        - asset: assets/fonts/Kaaf.ttf
+        #///
+        #///
+    - family: Diba
+      fonts:
+        - asset: assets/fonts/Diba.ttf
+    #     #///
+    #     #///
+    #     #///
+    #     #///
+    - family: Mashti
+      fonts:
+        - asset: assets/fonts/Mashti.ttf
+    #     #///
+    #     #///
+    #     #///
+    #     #///
+    - family: JameJam
+      fonts:
+        - asset: assets/fonts/JameJam.ttf
+    #     #///
+    #     #///
+    - family: Omid
+      fonts:
+        - asset: assets/fonts/Omid-UltraLight.ttf
+    #     #///
+    #     #///
+    - family: Gulf
+      fonts:
+        - asset: assets/fonts/Persian Gulf.ttf
+    #     #///
+    #     #///
+    - family: SOGAND
+      fonts:
+        - asset: assets/fonts/SOGAND.ttf
+    #     #///
+    #     #///
+    - family: ZahraRoosta
+      fonts:
+        - asset: assets/fonts/ZahraRoosta.ttf
+    #     #///
+    #     #///
+    - family: Light
+      fonts:
+        - asset: assets/fonts/YekanBakh_Light.ttf
+    #     #///
+    #     #///
+    - family: BTitrBd
+      fonts:
+        - asset: assets/fonts/BTitrBd.ttf
+
+    #     #///
+    #     #///
+    - family: IranNastaliq
+      fonts:
+        - asset: assets/fonts/IranNastaliq.ttf
+
+    #     #///
+    #     #///
+    - family: Ravi
+      fonts:
+        - asset: assets/fonts/Ravi Bold.ttf                        
   #
   # For details regarding fonts from package dependencies,
   # see https://flutter.dev/to/font-from-package
